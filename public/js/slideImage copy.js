@@ -1,12 +1,6 @@
 // JavaScript Document
 
 jQuery(function($){
-
-	var config = {
-
-		imgCurrentClass:"current"; 
-
-	}
 	
 	var styleHandle = {
 		
@@ -22,17 +16,16 @@ jQuery(function($){
 		
 		addCurrent : function(){
 			
-			
-			$("#scrollUl").find("li").eq(2).addClass(config.imgCurrentClass).css({"opacity" : 1});
-
+			var c = "current";
+			$("#scrollUl").find("li").eq(2).addClass(c).css({"opacity" : 1});
 			
 		},
 		
 		removeCurrent : function(){
 			
-
-			$current = $("#scrollUl").find("."+config.imgCurrentClass);
-			$current.removeClass(config.imgCurrentClass).css({"opacity" : 0.3});
+			var c = "current";
+			$current = $("#scrollUl").find("."+c);
+			$current.removeClass(c).css({"opacity" : 0.3});
 		}
 		
 	}
