@@ -12,7 +12,9 @@ jQuery(function($){
 
 		LisOpacity:0.3,
 
-		preLiNumbers:2
+		preLiNumbers:2,
+
+		override_liWidth:null
 
 
 
@@ -22,7 +24,7 @@ jQuery(function($){
 	    $t  = config.animationTime,
 	    $o  = config.LisOpacity,
 	    $pre = config.preLiNumbers,
-	    $w   = 
+	    $w   = null;
 
 	
 	var styleHandle = {
