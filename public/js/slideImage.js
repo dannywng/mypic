@@ -4,15 +4,20 @@ jQuery(function($){
 
 	var config = {
 
-		liCurrentClass:"current"; 
+		scrolllUlId:"scrollUl",
+
+		liCurrentClass:"current"
 
 	}
+
+	var $ul = $("#"+scrolllUlId);
+
 	
 	var styleHandle = {
 		
 		initUlLeft : function(){
 			
-			$("#scrollUl").css({
+			$ul.css({
 				
 				"left" : "-2000px"	
 				
@@ -22,14 +27,14 @@ jQuery(function($){
 		
 		addCurrentClassToLi : function(){
 					
-			$("#scrollUl").find("li").eq(2).addClass(config.liCurrentClass).css({"opacity" : 1});
+			$ul.find("li").eq(2).addClass(config.liCurrentClass).css({"opacity" : 1});
 			
 		},
 		
 		removeCurrentClassFromLi : function(){
 			
 
-			$current = $("#scrollUl").find("."+config.liCurrentClass);
+			$current = $ul.find("."+config.liCurrentClass);
 			$current.removeClass(config.liCurrentClass).css({"opacity" : 0.3});
 		}
 		
@@ -54,7 +59,6 @@ jQuery(function($){
 	
 	function triggerSlideEvent() {
 	
-		var $ul = $("#scrollUl");
 		
 		$("#slideTriggerLeft").click(function(){
 
@@ -104,7 +108,7 @@ jQuery(function($){
 		});
 	};
 	
-	$("#scrollUl").html(domFactory.createLis());
+	$ul.html(domFactory.createLis());
 	styleHandle.addCurrentClassToLi();
 	styleHandle.initUlLeft();
 	triggerSlideEvent();
