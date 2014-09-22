@@ -6,11 +6,19 @@ jQuery(function($){
 
 		scrolllUlId:"scrollUl",
 
-		liCurrentClass:"current"
+		currentLiClass:"current",
+
+		animationTime:500,
+
+		LisOpacity:0.3
+
+
 
 	}
 
-	var $ul = $("#"+scrolllUlId);
+	var $ul = $("#"+config.scrolllUlId),
+	    $t  = config.animationTime,
+	    $o  = config.LisOpacity;
 
 	
 	var styleHandle = {
@@ -27,15 +35,15 @@ jQuery(function($){
 		
 		addCurrentClassToLi : function(){
 					
-			$ul.find("li").eq(2).addClass(config.liCurrentClass).css({"opacity" : 1});
+			$ul.find("li").eq(2).addClass(config.currentLiClass).css({"opacity" : 1});
 			
 		},
 		
 		removeCurrentClassFromLi : function(){
 			
 
-			$current = $ul.find("."+config.liCurrentClass);
-			$current.removeClass(config.liCurrentClass).css({"opacity" : 0.3});
+			$current = $ul.find("."+config.currentLiClass);
+			$current.removeClass(config.currentLiClass).css({"opacity" : $o});
 		}
 		
 	}
@@ -72,7 +80,7 @@ jQuery(function($){
 			
 			//开始滑动
 			$ul.animate({left : "+="+dis+"px"},
-				500,
+				$t,
 				"linear",
 				function(){						
 					var lis =  $ul.find("li"),
@@ -96,7 +104,7 @@ jQuery(function($){
 			
 			//开始滑动
 			$ul.animate({left : "-="+dis+"px"},
-				500,
+				$t,
 				"linear",
 				function(){						
 					var lis =  $ul.find("li"),
