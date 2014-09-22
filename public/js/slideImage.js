@@ -10,7 +10,9 @@ jQuery(function($){
 
 		animationTime:500,
 
-		LisOpacity:0.3
+		LisOpacity:0.3,
+
+		preLiNumbers:2
 
 
 
@@ -18,7 +20,9 @@ jQuery(function($){
 
 	var $ul = $("#"+config.scrolllUlId),
 	    $t  = config.animationTime,
-	    $o  = config.LisOpacity;
+	    $o  = config.LisOpacity,
+	    $pre = config.preLiNumbers,
+	    $w   = 
 
 	
 	var styleHandle = {
@@ -35,7 +39,7 @@ jQuery(function($){
 		
 		addCurrentClassToLi : function(){
 					
-			$ul.find("li").eq(2).addClass(config.currentLiClass).css({"opacity" : 1});
+			$ul.find("li").eq($pre).addClass(config.currentLiClass).css({"opacity" : 1});
 			
 		},
 		
