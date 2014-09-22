@@ -4,7 +4,7 @@ jQuery(function($){
 
 	var config = {
 
-		imgCurrentClass:"current"; 
+		liCurrentClass:"current"; 
 
 	}
 	
@@ -21,18 +21,16 @@ jQuery(function($){
 		},
 		
 		addCurrent : function(){
-			
-			
-			$("#scrollUl").find("li").eq(2).addClass(config.imgCurrentClass).css({"opacity" : 1});
-
+					
+			$("#scrollUl").find("li").eq(2).addClass(config.liCurrentClass).css({"opacity" : 1});
 			
 		},
 		
 		removeCurrent : function(){
 			
 
-			$current = $("#scrollUl").find("."+config.imgCurrentClass);
-			$current.removeClass(config.imgCurrentClass).css({"opacity" : 0.3});
+			$current = $("#scrollUl").find("."+config.liCurrentClass);
+			$current.removeClass(config.liCurrentClass).css({"opacity" : 0.3});
 		}
 		
 	}
