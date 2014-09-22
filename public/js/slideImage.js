@@ -20,13 +20,13 @@ jQuery(function($){
 			
 		},
 		
-		addCurrent : function(){
+		addCurrentClassToLi : function(){
 					
 			$("#scrollUl").find("li").eq(2).addClass(config.liCurrentClass).css({"opacity" : 1});
 			
 		},
 		
-		removeCurrent : function(){
+		removeCurrentClassFromLi : function(){
 			
 
 			$current = $("#scrollUl").find("."+config.liCurrentClass);
@@ -64,7 +64,7 @@ jQuery(function($){
 			
 			dis = $current.width();
 			
-			styleHandle.removeCurrent();
+			styleHandle.removeCurrentClassFromLi();
 			
 			//开始滑动
 			$ul.animate({left : "+="+dis+"px"},
@@ -74,7 +74,7 @@ jQuery(function($){
 					var lis =  $ul.find("li"),
 						f = lis.last();	
 					$ul.animate({"left" : "-="+f.width()+"px"},0).prepend(f);		
-					styleHandle.addCurrent();			
+					styleHandle.addCurrentClassToLi();			
 			});	
 
 		});
@@ -88,7 +88,7 @@ jQuery(function($){
 			
 			dis = $current.width();
 			
-			styleHandle.removeCurrent();
+			styleHandle.removeCurrentClassFromLi();
 			
 			//开始滑动
 			$ul.animate({left : "-="+dis+"px"},
@@ -98,14 +98,14 @@ jQuery(function($){
 					var lis =  $ul.find("li"),
 						f = lis.first();	
 					$ul.animate({"left" : "+="+f.width()+"px"},0).append(f);		
-					styleHandle.addCurrent();			
+					styleHandle.addCurrentClassToLi();	
 			});	
 			
 		});
 	};
 	
 	$("#scrollUl").html(domFactory.createLis());
-	styleHandle.addCurrent();
+	styleHandle.addCurrentClassToLi();
 	styleHandle.initUlLeft();
 	triggerSlideEvent();
 
