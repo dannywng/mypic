@@ -8,18 +8,19 @@ jQuery(function($){
 
 		currentLiClass:"current",
 
-		animationTime:500,
+		animationTime:400,
 
-		LisOpacity:0.3,
+		LisOpacity:0.4,
 
-		preLiNumbers:2,
+		preLiNumbers:7,
 
 	}
 
 	var $ul = $("#"+config.scrolllUlId),
 	    $t  = config.animationTime,
 	    $o  = config.LisOpacity,
-	    $pre = config.preLiNumbers;
+	    $pre = config.preLiNumbers,
+	    $c   = config.currentLiClass;
 
 	var domFactory = {
 		
@@ -32,6 +33,17 @@ jQuery(function($){
 			lis += "<li><img src=\"img/landsend02.jpg\" /></li>";
 			lis += "<li><img src=\"img/landsend03.jpg\" /></li>";
 			lis += "<li><img src=\"img/landsend04.jpg\" /></li>";
+			lis += "<li><img src=\"img/landsend08.jpg\" /></li>";
+			lis += "<li><img src=\"img/london03.jpg\" /></li>";
+			lis += "<li><img src=\"img/leeds08.jpeg\" /></li>";
+			lis += "<li><img src=\"img/leeds06.jpeg\" /></li>";
+			lis += "<li><img src=\"img/london01.jpg\" /></li>";
+			lis += "<li><img src=\"img/leeds10.jpeg\" /></li>";
+			lis += "<li><img src=\"img/london04.jpg\" /></li>";
+			lis += "<li><img src=\"img/london02.jpg\" /></li>";
+			lis += "<li><img src=\"img/leeds01.jpeg\" /></li>";
+
+
 
 			return lis;
 		},
@@ -52,17 +64,11 @@ jQuery(function($){
 
 		getCurrentLi : function(){
 
-			return $ul.find("."+config.currentLiClass);	
+			return $ul.find("."+$c);	
 
 		}
 		
 	}
-
-	domFactory.addLisToUl();
-
-	var $w= domFactory.getLiWidth(),
-
-		$dis=$w*$pre;
 	    	
 	var styleHandle = {
 		
@@ -70,27 +76,53 @@ jQuery(function($){
 			
 			$ul.css({
 				
-				"left" : "-"+$dis+"px"	
+				"left" : "-"+$pre*domFactory.getLiWidth()+"px"	
 				
 			});			
 			
 		},
+
+		setLisOpacity : function(){
+
+			$ul.find("li").each(function(){
+
+				$(this).css("opacity",$o);
+
+			});
+
+		},
 		
 		addCurrentClassToLi : function(){
 					
-			$ul.find("li").eq($pre).addClass(config.currentLiClass).css({"opacity" : 1});
+			$ul.find("li").eq($pre).addClass($c).css({"opacity" : 1});
 			
 		},
 		
 		removeCurrentClassFromLi : function(){					
 
-			domFactory.getCurrentLi().removeClass(config.currentLiClass).css({"opacity" : $o});
+			domFactory.getCurrentLi().removeClass($c).css({"opacity" : $o});
 
 		}
 		
 	}
 
 	var eventHandle = {
+
+		lisHoveringIn : function($this){
+
+			if ($this.is("."+$c)) {return;};
+
+			$this.css("opacity",1);
+
+		},
+
+		lisHoveringOut : function($this){
+
+			if ($this.is("."+$c)) {return;};
+
+			$this.css("opacity",$o);
+
+		},
 
 		slideRight : function(){
 
@@ -153,8 +185,19 @@ jQuery(function($){
 
 	}
 	
-	function triggerSlideEvents() {
-	
+	function triggerEvent() {
+
+
+		$ul.find("li").hover(function(){
+
+			eventHandle.lisHoveringIn($(this));
+
+		},
+		function(){
+
+			eventHandle.lisHoveringOut($(this));
+
+		});
 		
 		$("#slideTriggerLeft").click(function(){
 
@@ -178,11 +221,15 @@ jQuery(function($){
 	
 	function init(){
 
+		domFactory.addLisToUl();
+
+		styleHandle.setLisOpacity();
+
 		styleHandle.addCurrentClassToLi();
 
 		styleHandle.initUlLeft();
 
-		triggerSlideEvents();
+		triggerEvent();
 
 	};
 	
