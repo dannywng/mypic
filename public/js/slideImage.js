@@ -133,11 +133,27 @@ jQuery(function($){
 			});	
 
 
+		},
+
+		keyDown : function(event){
+
+			if(event.keyCode=='39'){
+
+				this.slideRight();
+
+			}
+
+			if(event.keyCode=='37'){
+
+				this.slideLeft();
+
+			}
+
 		}
 
 	}
 	
-	function triggerSlideEvent() {
+	function triggerSlideEvents() {
 	
 		
 		$("#slideTriggerLeft").click(function(){
@@ -152,13 +168,24 @@ jQuery(function($){
 			eventHandle.slideRight();
 			
 		});
+
+		$(document).keydown(function(event){
+
+			eventHandle.keyDown(event);
+
+		});
 	};
 	
-	
-	
-	styleHandle.addCurrentClassToLi();
+	function init(){
 
-	styleHandle.initUlLeft();
-	triggerSlideEvent();
+		styleHandle.addCurrentClassToLi();
+
+		styleHandle.initUlLeft();
+
+		triggerSlideEvents();
+
+	};
+	
+	init();
 
 });
