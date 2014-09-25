@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/slideImage.css">
   </head>
   <body>
-  	<div class="wrap">
+  	
+    <div class="wrap">
     	<div id="scrollWrap">
             <ul id="scrollUl">
                 

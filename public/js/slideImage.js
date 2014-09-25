@@ -8,6 +8,8 @@ jQuery(function($){
 
 		currentLiClass:"current",
 
+		imgSpacing:30, //unit:px
+
 		animationTime:400,
 
 		LisOpacity:0.3,
@@ -15,7 +17,8 @@ jQuery(function($){
 		preLiNumbers:2,
 
 		lishoverBright:true,
-		hoverOpacity:0.5
+
+		hoverLisOpacity:0.5
 
 	}
 
@@ -23,7 +26,8 @@ jQuery(function($){
 	    $t  = config.animationTime,
 	    $o  = config.LisOpacity,
 	    $pre = config.preLiNumbers,
-	    $c   = config.currentLiClass;
+	    $c   = config.currentLiClass,
+	    $room = config.imgSpacing;
 
 	var domFactory = {
 		
@@ -59,9 +63,9 @@ jQuery(function($){
 
 		getLiWidth : function(){
 
-			var $liWidth = $ul.find("li:first-child").css("width");
+			var $liWidth = $ul.find("li:first-child").width();
 
-			return $liWidth.substring(0,$liWidth.length-2);
+			return $liWidth;
 
 		},
 
@@ -74,12 +78,24 @@ jQuery(function($){
 	}
 	    	
 	var styleHandle = {
+
+		addLiRightMargin : function(){
+
+			$ul.find("li").css({
+
+				"margin-right" : $room+"px"
+
+			});
+
+		},
 		
 		initUlLeft : function(){
+
+			dis = $pre*(domFactory.getLiWidth()+$room);
 			
 			$ul.css({
 				
-				"left" : "-"+$pre*domFactory.getLiWidth()+"px"	
+				"left" : "-"+dis+"px"	
 				
 			});			
 			
@@ -115,7 +131,7 @@ jQuery(function($){
 
 			if ($this.is("."+$c)) {return;};
 
-			$this.css("opacity",config.hoverOpacity);
+			$this.css("opacity",config.hoverLisOpacity);
 
 		},
 
@@ -298,6 +314,8 @@ jQuery(function($){
 	function init(){
 
 		domFactory.addLisToUl();
+
+		styleHandle.addLiRightMargin();
 
 		styleHandle.setLisOpacity();
 
