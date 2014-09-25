@@ -124,47 +124,109 @@ jQuery(function($){
 
 		},
 
-		slideRight : function(){
+		slideRight : function(time,callBack){
 
 			if($ul.is(":animated")) {return;};
 			
 			dis = domFactory.getCurrentLi().width();
 			
 			styleHandle.removeCurrentClassFromLi();
+
+			slideTime = time||$t;
 			
 			//开始滑动
 			$ul.animate({left : "-="+dis+"px"},
-				$t,
+				slideTime,
 				"linear",
 				function(){						
 					var lis =  $ul.find("li"),
 						f = lis.first();	
 					$ul.animate({"left" : "+="+f.width()+"px"},0).append(f);		
 					styleHandle.addCurrentClassToLi();	
+					if(callBack){callBack()};
 			});	
 
 		},
 
-		slideLeft : function(){
+		slideLeft : function(time,callBack){
 
 			if($ul.is(":animated")) {return;};
 			
 			dis = domFactory.getCurrentLi().width();
 			
 			styleHandle.removeCurrentClassFromLi();
+
+			slideTime = time||$t;
 			
 			//开始滑动
 			$ul.animate({left : "+="+dis+"px"},
-				$t,
+				slideTime,
 				"linear",
 				function(){						
 					var lis =  $ul.find("li"),
 						l = lis.last();	
 					$ul.animate({"left" : "-="+l.width()+"px"},0).prepend(l);		
-					styleHandle.addCurrentClassToLi();			
+					styleHandle.addCurrentClassToLi();	
+					if (callBack) {callBack()};		
 			});	
 
 
+		},
+
+		lisClick : function($this){
+
+			var totalTime = $t,
+
+				lis = $ul.find("li");
+
+			if ($this.is("."+$c)){return;}
+
+			else{
+
+				var index = lis.index($this);
+
+				this.slideTimesFlag = index - $pre;
+
+				this.animationSpeed = totalTime / Math.abs(this.slideTimesFlag);
+
+				this.slideCounter = 1;
+
+				if (index < $pre) {
+
+					//ON THE LEFT SIDE
+
+					this.slideLeft(this.animationSpeed,this.slideLeftCall);
+
+				}
+
+				else{
+
+					//ON THE RIGHT SIDE
+
+					this.slideRight(this.animationSpeed,this.slideRightCall);
+
+				}
+			}
+		},
+
+		slideRightCall : function(){
+
+			if (eventHandle.slideCounter>=Math.abs(eventHandle.slideTimesFlag)) {return;};
+
+			eventHandle.slideCounter++;
+
+			eventHandle.slideRight(eventHandle.animationSpeed,eventHandle.slideRightCall);
+
+		},
+
+		slideLeftCall : function(){
+
+			if (eventHandle.slideCounter>=Math.abs(eventHandle.slideTimesFlag)) {return;};
+
+			eventHandle.slideCounter++;
+
+			eventHandle.slideLeft(eventHandle.animationSpeed,eventHandle.slideLeftCall);
+			
 		},
 
 		keyDown : function(event){
@@ -196,6 +258,14 @@ jQuery(function($){
 		function(){
 
 			eventHandle.lisHoveringOut($(this));
+
+		});
+
+		$ul.find("li").click(function(){
+
+			var $this=$(this);
+
+			eventHandle.lisClick($this);
 
 		});
 		
