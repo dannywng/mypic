@@ -15,10 +15,6 @@
             </ul>
     	</div>
     </div>
-    <div>
-        <span id="slideTriggerLeft">向左翻</span>
-        <span id="slideTriggerRight">向右翻</span>
-	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="components/vendor/jquery/dist/jquery.min.js"></script>
