@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap 101 Template</title>
+    <title>丹尼映像</title>
     <link rel="stylesheet" type="text/css" href="css/slideImage.css">
   </head>
   <body>

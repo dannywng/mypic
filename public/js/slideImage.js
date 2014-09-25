@@ -10,9 +10,12 @@ jQuery(function($){
 
 		animationTime:400,
 
-		LisOpacity:0.4,
+		LisOpacity:0.3,
 
-		preLiNumbers:7,
+		preLiNumbers:2,
+
+		lishoverBright:true,
+		hoverOpacity:0.5
 
 	}
 
@@ -112,7 +115,7 @@ jQuery(function($){
 
 			if ($this.is("."+$c)) {return;};
 
-			$this.css("opacity",1);
+			$this.css("opacity",config.hoverOpacity);
 
 		},
 
@@ -249,17 +252,20 @@ jQuery(function($){
 	
 	function triggerEvent() {
 
+		if (config.lishoverBright==true){
+		
+			$ul.find("li").hover(function(){
 
-		$ul.find("li").hover(function(){
+				eventHandle.lisHoveringIn($(this));
 
-			eventHandle.lisHoveringIn($(this));
+			},
+			function(){
 
-		},
-		function(){
+				eventHandle.lisHoveringOut($(this));
 
-			eventHandle.lisHoveringOut($(this));
+			});
 
-		});
+		};
 
 		$ul.find("li").click(function(){
 

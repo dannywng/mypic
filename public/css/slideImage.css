@@ -16,9 +16,9 @@ body, ul, li, img {
 }
 
 #scrollWrap {
-	width: 100px;
+	width: 1000px;
 	position: relative;
-	margin-left: -50px;
+	margin-left: -500px;
 	left: 50%;
 	/*ie6,7 hack*/
 	_overflow-x:hidden
@@ -48,5 +48,5 @@ body, ul, li, img {
 }
 
 #scrollUl img {
-	width:100px;	
+	width:1000px;	
 }
