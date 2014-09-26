@@ -8,12 +8,15 @@
   <body>
   	
     <div class="wrap">
+
     	<div id="scrollWrap">
-            <ul id="scrollUl">
+        <span class="arrow" id="leftarrow"></span>
+        <span class="arrow" id="rightarrow"></span>
+        <ul id="scrollUl">
                 
 
                 
-            </ul>
+         </ul>
     	</div>
     </div>
 

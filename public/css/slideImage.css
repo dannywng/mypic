@@ -25,6 +25,34 @@ body, ul, li, img {
 
 }
 
+#scrollWrap .arrow {
+
+	opacity: 0.3;
+	position: absolute;
+	top: 50%;
+	width: 27px;
+	height: 45px;
+	cursor: pointer;
+	z-index: 99;
+
+}
+
+#scrollWrap #leftarrow {
+
+	left: -15%;
+	background: url(background-images/arrows.png) -0px -0px no-repeat;
+	background-size: 112px 46.5px;
+	
+}
+
+#scrollWrap #rightarrow {
+
+	right: -15%;
+	background: url(background-images/arrows.png) -55px -0px no-repeat;
+	background-size: 112px 46.5px;
+
+}
+
 #scrollUl {
 	list-style:none;
 	position: relative;
