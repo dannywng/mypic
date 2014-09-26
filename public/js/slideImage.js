@@ -147,7 +147,7 @@ jQuery(function($){
 
 			if($ul.is(":animated")) {return;};
 			
-			dis = domFactory.getCurrentLi().width();
+			dis = domFactory.getCurrentLi().width()+$room;
 			
 			styleHandle.removeCurrentClassFromLi();
 
@@ -160,7 +160,7 @@ jQuery(function($){
 				function(){						
 					var lis =  $ul.find("li"),
 						f = lis.first();	
-					$ul.animate({"left" : "+="+f.width()+"px"},0).append(f);		
+					$ul.animate({"left" : "+="+(f.width()+$room)+"px"},0).append(f);		
 					styleHandle.addCurrentClassToLi();	
 					if(callBack){callBack()};
 			});	
@@ -171,7 +171,7 @@ jQuery(function($){
 
 			if($ul.is(":animated")) {return;};
 			
-			dis = domFactory.getCurrentLi().width();
+			dis = domFactory.getCurrentLi().width()+$room;
 			
 			styleHandle.removeCurrentClassFromLi();
 
@@ -184,7 +184,7 @@ jQuery(function($){
 				function(){						
 					var lis =  $ul.find("li"),
 						l = lis.last();	
-					$ul.animate({"left" : "-="+l.width()+"px"},0).prepend(l);		
+					$ul.animate({"left" : "-="+(l.width()+$room)+"px"},0).prepend(l);		
 					styleHandle.addCurrentClassToLi();	
 					if (callBack) {callBack()};		
 			});	
