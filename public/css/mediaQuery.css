@@ -1,15 +1,41 @@
-	@media screen and (max-width:480px) {
+	@media screen and (min-width:480px) {
 		 
 		#scrollWrap {
-	   		width: 300px;
-	   		margin-left: -150px;
+	   		width: 480px;
+	   		margin-left: -240px;
 	  	}
+
+		#scrollWrap .arrow {
+
+			width: 27px;
+			height: 45px;
+
+
+		}
+
+		#scrollWrap #leftarrow {
+
+			left: 0%;
+
+			background-size: 112px 46.5px;
+			
+		}
+
+		#scrollWrap #rightarrow {
+
+			right: 0%;
+
+			background-size: 112px 46.5px;
+
+		}
 
 	  	#scrollUl img {
 
-	  		width: 300px;
+	  		width: 480px;
 
 	  	}
+
+
 
 	 }
 	
