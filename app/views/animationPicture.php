@@ -5,6 +5,7 @@
 
     <title>丹尼映像</title>
     <link rel="stylesheet" type="text/css" href="css/slideImage.css">
+    <link rel="stylesheet" type="text/css" href="css/mediaQuery.css">
   </head>
   <body>
   	
