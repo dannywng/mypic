@@ -1,10 +1,10 @@
 
 
-	@media screen and (min-width:480px) {
+	@media screen and (min-width:320px) {
 		 
 		#scrollWrap {
-	   		width: 480px;
-	   		margin-left: -240px;
+	   		width: 320px;
+	   		margin-left: -160px;
 	  	}
 
 		#scrollWrap .arrow {
@@ -33,7 +33,7 @@
 
 	  	#scrollUl img {
 
-	  		width: 480px;
+	  		width: 320px;
 
 	  	}
 
