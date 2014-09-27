@@ -34,21 +34,33 @@ jQuery(function($){
 		createLis : function(){
 			
 			var lis = "";
-			lis = "<li><img src=\"img/london07.jpg\" /></li>";
-			lis += "<li><img src=\"img/landsend05.jpg\" /></li>";
-			lis += "<li><img src=\"img/landsend01.jpg\" /></li>";
-			lis += "<li><img src=\"img/landsend02.jpg\" /></li>";
-			lis += "<li><img src=\"img/landsend03.jpg\" /></li>";
-			lis += "<li><img src=\"img/landsend04.jpg\" /></li>";
-			lis += "<li><img src=\"img/landsend08.jpg\" /></li>";
-			lis += "<li><img src=\"img/london03.jpg\" /></li>";
-			lis += "<li><img src=\"img/leeds08.jpeg\" /></li>";
-			lis += "<li><img src=\"img/leeds06.jpeg\" /></li>";
-			lis += "<li><img src=\"img/london01.jpg\" /></li>";
-			lis += "<li><img src=\"img/leeds10.jpeg\" /></li>";
-			lis += "<li><img src=\"img/london04.jpg\" /></li>";
-			lis += "<li><img src=\"img/london02.jpg\" /></li>";
-			lis += "<li><img src=\"img/leeds01.jpeg\" /></li>";
+			lis = "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNPRVn/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNPon3/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNPluV/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNOPuh/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNOkrX/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNNUru/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNNnCl/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNMM3y/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNMJ7V/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNLJxg/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNL8Zj/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNBuc6/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNBoZp/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNB5u2/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNlvQn/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNldk7/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNkzJp/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNkqN7/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNk0Zk/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNjXUh/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNjBUW/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNjw0O/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNjaVm/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNiQC5/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNeS6g/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNdo8T/custom.jpg\" /></li>";
+			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wMQdu5/custom.jpg\" /></li>";
 
 
 
