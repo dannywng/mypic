@@ -36,7 +36,6 @@ jQuery(function($){
 			var lis = "";
 			lis = "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNPRVn/custom.jpg\" /></li>";
 			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNPon3/custom.jpg\" /></li>";
-			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNPluV/custom.jpg\" /></li>";
 			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNOPuh/custom.jpg\" /></li>";
 			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNOkrX/custom.jpg\" /></li>";
 			lis += "<li><img src=\"http://pic.yupoo.com/danielwng/E5wNNUru/custom.jpg\" /></li>";
