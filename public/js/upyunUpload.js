@@ -1,6 +1,6 @@
 jQuery(function($){
 
-	$.getJSON("/views/handlers/upyun/formAPI_getSignature.php",function(data){
+	$.getJSON("/handlers/upyun/formAPI_getSignature.php",function(data){
 
 		alert(data);
 
