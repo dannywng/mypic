@@ -8,7 +8,7 @@ jQuery(function($){
 
 		currentLiClass:"current",
 
-		imgSpacing:30, //unit:px
+		imgSpacing:0, //unit:px
 
 		animationTime:400,
 

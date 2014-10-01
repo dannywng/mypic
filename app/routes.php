@@ -14,5 +14,9 @@
 Route::get('/', function()
 {
 	return View::make('animationPicture');
+
+    
 });
+
+Route::resource('posts','PostsController');
 
