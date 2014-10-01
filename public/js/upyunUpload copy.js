@@ -34,27 +34,18 @@ jQuery(function($){
 
 			formData.append("file",file);
 
-			$.ajax({
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST","http://v0.api.upyun.com/mypicwebsite",true);
+			xhr.onreadystatechange = function(){
 
-				url : "http://v0.api.upyun.com/mypicwebsite",
-				type : "POST",
-				data : formData,
-				processData : false,
-				contentType : false
+				if(xhr.readyState==4 && xhr.status==200){
 
-			}).done(function(ret){
-
-				if(ret){
-
-					alert(ret);
-
-				}else{
-
-					alert('保存成功！');
+					alert(xhr.responseText);
 
 				}
+			}
 
-			});
+			xhr.send(formData);
 
 		});
 

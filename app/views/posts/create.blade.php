@@ -19,6 +19,7 @@
       <input type="hidden" name="signature" value="">
 			
     </form>
+    
     <script src="/components/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/js/upyunUpload.js" ></script>
 </body>

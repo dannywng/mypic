@@ -14,8 +14,6 @@ $options['save-key'] = 'mypic_{year}{mon}{day}{hour}{min}{sec}_{random}{.suffix}
 
 $options['allow-file-type'] = 'jpg,jpeg,gif,png';
 
-$options['return-url'] = 'http://mypic.io/';
-
 $policy = base64_encode(json_encode($options));
 
 $signature = md5($policy.'&'.$form_api_secret);
