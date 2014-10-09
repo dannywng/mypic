@@ -60,51 +60,7 @@ $signature = md5($policy.'&'.$form_api_secret);
 	    <br />
     	
     	<div id="pic-preview-area" class="row">
-    		<div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-			<div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-		    <div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-			<div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-		    <div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-			<div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-		    			<div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-		    <div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
-			<div class="col-md-2 col-sm-3 col-xs-4">
-    			<a href="#" class="thumbnail">
-      				<img data-src="holder.js/100%x155/auto" alt="...">
-    			</a>
-		    </div>
+
 	    </div>
 
     </div>
@@ -124,6 +80,22 @@ $(function () {
         change: function (e, data) {
         	$('.progress .progress-bar span').removeClass('sr-only');
     	},
+    	submit: function(e,data){
+
+    		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
+    			$newA = $("<a href='#'' class='thumbnail'/>"),
+    			$newImg = $("<img data-src='holder.js/100%x155/auto'>");
+
+    		$newA.append($newImg);
+
+    		$newDiv.append($newA);
+ 
+			$( "#pic-preview-area" ).append($newDiv);
+
+			//重新运行holder.js
+			Holder.run();
+
+    	},
         progressall: function (e, data) {
         var progress = parseInt(data.loaded / data.total * 100, 10);
         $('.progress .progress-bar').css(
@@ -139,7 +111,7 @@ $(function () {
             });
 
             img1 = new Image();
-            img1.src = "http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square140";
+            img1.src = "http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250";
             $('body').append(img1);
         },
         fail:function(){
