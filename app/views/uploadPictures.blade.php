@@ -84,7 +84,7 @@ $(function () {
 
     		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
     			$newA = $("<a href='#'' class='thumbnail'/>"),
-    			$newImg = $("<img data-src='holder.js/155x155/auto'>");
+    			$newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto'>");
 
     		$newA.append($newImg);
 
