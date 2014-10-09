@@ -54,6 +54,10 @@ jQuery(function($){
 
 				}
 
+			}).fail(function(ret){
+
+				alert(ret);
+
 			});
 
 		});

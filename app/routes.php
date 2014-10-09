@@ -20,3 +20,15 @@ Route::get('/', function()
 
 Route::resource('posts','PostsController');
 
+Route::get('/upload',function(){
+
+	return View::make('upload');
+
+});
+
+Route::get('/uploadPictures',function(){
+
+	return View::make('uploadPictures');
+
+});
+
