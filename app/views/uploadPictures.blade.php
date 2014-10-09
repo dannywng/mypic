@@ -84,7 +84,7 @@ $(function () {
 
     		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
     			$newA = $("<a href='#'' class='thumbnail'/>"),
-    			$newImg = $("<img data-src='holder.js/100%x155/auto'>");
+    			$newImg = $("<img data-src='holder.js/155x155/auto'>");
 
     		$newA.append($newImg);
 
@@ -94,6 +94,10 @@ $(function () {
 
 			//重新运行holder.js
 			Holder.run();
+
+			data.context = $newImg;
+
+			
 
     	},
         progressall: function (e, data) {
@@ -107,12 +111,11 @@ $(function () {
         done: function (e, data) {
             //alert(data.result.url);
             $.each(data.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
+                //$('<p/>').text(file.name).appendTo(document.body);
             });
 
-            img1 = new Image();
-            img1.src = "http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250";
-            $('body').append(img1);
+            data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
+            data.context.attr("data-src","");
         },
         fail:function(){
 
