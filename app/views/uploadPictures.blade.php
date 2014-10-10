@@ -22,6 +22,7 @@ $signature = md5($policy.'&'.$form_api_secret);
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 <meta charset="utf-8">
 <title>图片上传</title>
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -51,7 +52,7 @@ $signature = md5($policy.'&'.$form_api_secret);
     		<div class="col-md-12">
     			<div class="progress">
   					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-    					<span class="sr-only"><strong>60%</strong></span>
+    					<span class="sr-only"><strong>0%</strong></span>
   					</div>
 				</div>
 		    </div>
@@ -84,7 +85,7 @@ $(function () {
 
     		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
     			$newA = $("<a href='#'' class='thumbnail'/>"),
-    			$newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto'>");
+    			$newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+data.files[0].name+"'>");
 
     		$newA.append($newImg);
 
@@ -100,6 +101,11 @@ $(function () {
 			
 
     	},
+        progressdone: function(e,data) {
+
+
+
+        },
         progressall: function (e, data) {
         var progress = parseInt(data.loaded / data.total * 100, 10);
         $('.progress .progress-bar').css(
@@ -109,11 +115,9 @@ $(function () {
         $('.progress .progress-bar span strong').text(progress+'%');
     	},
         done: function (e, data) {
-            //alert(data.result.url);
             $.each(data.files, function (index, file) {
                 //$('<p/>').text(file.name).appendTo(document.body);
             });
-
             data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
             data.context.attr("data-src","");
         },
