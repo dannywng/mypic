@@ -93,17 +93,12 @@ $(function () {
  
 			$( "#pic-preview-area" ).append($newDiv);
 
-			//重新运行holder.js
-			//Holder.run();
-
 			data.context = $newImg;
-
-			
-
     	},
-        progressdone: function(e,data) {
+        send : function(e, data){
 
-
+            //重新运行holder.js
+            Holder.run();
 
         },
         progressall: function (e, data) {
