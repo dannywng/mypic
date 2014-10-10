@@ -8,7 +8,7 @@ $options = array();
 
 $options['bucket'] = $bucket;
 
-$options['expiration'] = time()+600;
+$options['expiration'] = time()+1200;
 
 $options['save-key'] = 'mypic_{year}{mon}{day}{hour}{min}{sec}_{random}{.suffix}';
 
