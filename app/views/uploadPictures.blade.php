@@ -81,7 +81,7 @@ $(function () {
         change: function (e, data) {
         	$('.progress .progress-bar span').removeClass('sr-only');
     	},
-    	submit: function(e,data){
+    	add: function(e,data){
 
     		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
     			$newA = $("<a href='#'' class='thumbnail'/>"),
@@ -94,6 +94,8 @@ $(function () {
 			$( "#pic-preview-area" ).append($newDiv);
 
 			data.context = $newImg;
+
+            data.submit();
     	},
         send : function(e, data){
 
