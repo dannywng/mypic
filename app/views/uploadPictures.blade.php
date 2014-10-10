@@ -10,7 +10,7 @@ $options['bucket'] = $bucket;
 
 $options['expiration'] = time()+1200;
 
-$options['save-key'] = 'mypic_{year}{mon}{day}{hour}{min}{sec}_{random}{.suffix}';
+$options['save-key'] = '{year}{mon}{day}{hour}{min}{sec}{random}{.suffix}';
 
 $options['allow-file-type'] = 'jpg,jpeg,gif,png';
 
@@ -84,7 +84,7 @@ $(function () {
     	add: function(e,data){
 
     		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
-    			$newA = $("<a href='#'' class='thumbnail'/>"),
+    			$newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
     			$newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+data.files[0].name+"'>");
 
     		$newA.append($newImg);
@@ -115,6 +115,7 @@ $(function () {
             });
             data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
             data.context.attr("data-src","");
+            data.context.parent().attr("href","http://mypicwebsite.b0.upaiyun.com/"+data.result.url);
         },
         fail:function(){
 
