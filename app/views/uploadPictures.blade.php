@@ -95,16 +95,12 @@ $(function () {
 
 			data.context = $newImg;
 
-            data.submit();
-
             //重新运行holder.js
             Holder.run();
+
+            data.submit();
+
     	},
-        send : function(e, data){
-
-
-
-        },
         progressall: function (e, data) {
         var progress = parseInt(data.loaded / data.total * 100, 10);
         $('.progress .progress-bar').css(
