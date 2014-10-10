@@ -94,7 +94,7 @@ $(function () {
 			$( "#pic-preview-area" ).append($newDiv);
 
 			//重新运行holder.js
-			Holder.run();
+			//Holder.run();
 
 			data.context = $newImg;
 
