@@ -96,11 +96,13 @@ $(function () {
 			data.context = $newImg;
 
             data.submit();
-    	},
-        send : function(e, data){
 
             //重新运行holder.js
             Holder.run();
+    	},
+        send : function(e, data){
+
+
 
         },
         progressall: function (e, data) {
