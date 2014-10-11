@@ -32,3 +32,9 @@ Route::get('/uploadPictures',function(){
 
 });
 
+Route::get('/uploadPictures2',function(){
+
+	return View::make('uploadPictures2');
+
+});
+
