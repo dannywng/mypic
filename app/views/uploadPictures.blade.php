@@ -103,12 +103,13 @@ $(function () {
             //重新运行holder.js
             Holder.run();
 
+            $("#pic-preview-area img").removeAttr("data-src");
+
     	},
     	add: function(e,data){
 
             //alert(data.files[0].name);
             var img = $("#pic-preview-area img#"+cc);
-            img.removeAttr("data-src");
 			data.context = img;
             cc++;
             data.submit();
@@ -127,7 +128,7 @@ $(function () {
                 //$('<p/>').text(file.name).appendTo(document.body);
             });
             data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
-            data.context.removeAttr("data-src");
+            //data.context.removeAttr("data-src");
             data.context.parent().attr("href","http://mypicwebsite.b0.upaiyun.com/"+data.result.url);
         },
         fail:function(){
