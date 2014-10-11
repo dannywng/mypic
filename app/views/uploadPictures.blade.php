@@ -83,7 +83,6 @@ $(function () {
                    signature: '{{$signature}}'
         },
         change: function (e, data) {
-            alert("fuck you!!!");
         	$('.progress .progress-bar span').removeClass('sr-only');
             $.each(data.files, function (index, file) {
                 //alert('Selected file: ' + file.name);
@@ -105,8 +104,7 @@ $(function () {
             Holder.run();
 
             $("#pic-preview-area img").removeAttr("data-src");
-
-            Holder.run();
+            $("#pic-preview-area img").removeAttr("data-holder-rendered");
 
     	},
     	add: function(e,data){
