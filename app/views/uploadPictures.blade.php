@@ -101,7 +101,13 @@ $(function () {
             });
 
             //重新运行holder.js
-            Holder.run();
+            try{
+
+                Holder.run();
+            }
+            catch(e){
+                alert("fuck");
+            }
 
             $("#pic-preview-area img").removeAttr("data-src");
             $("#pic-preview-area img").removeAttr("data-holder-rendered");
