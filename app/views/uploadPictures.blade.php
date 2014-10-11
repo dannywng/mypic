@@ -101,13 +101,7 @@ $(function () {
             });
 
             //重新运行holder.js
-            try{
-
-                Holder.run();
-            }
-            catch(e){
-                alert("fuck");
-            }
+            Holder.run({renderer: 'canvas'});
 
             $("#pic-preview-area img").removeAttr("data-src");
             $("#pic-preview-area img").removeAttr("data-holder-rendered");
