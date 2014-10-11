@@ -74,8 +74,22 @@ $signature = md5($policy.'&'.$form_api_secret);
 <script>
 $(function () {
 
-    
-    
+    Holder.addImage("holder.js/200x100","body").run();
+        Holder.addImage("holder.js/200x100","body").run();
+
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+    Holder.addImage("holder.js/200x100","body").run();
+
+
 
     var c=0;
     var cc=0;
@@ -89,13 +103,22 @@ $(function () {
         	$('.progress .progress-bar span').removeClass('sr-only');
             $.each(data.files, function (index, file) {
                 //alert('Selected file: ' + file.name);
-                Holder.addImage("holder.js/200x100","body").run();
-          
+            var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
+                $newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
+                $newImg = $("<img id='"+c+"' style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+file.name+"'>");
+
+            $newA.append($newImg);
+
+            $newDiv.append($newA);
+ 
+            $( "#pic-preview-area" ).append($newDiv);
+
+            c++;
 
             });
 
             //重新运行holder.js
-            
+            Holder.run();
 
             $("#pic-preview-area img").removeAttr("data-src");
             $("#pic-preview-area img").removeAttr("data-holder-rendered");
