@@ -83,6 +83,7 @@ $(function () {
                    signature: '{{$signature}}'
         },
         change: function (e, data) {
+            alert("fuck you!!!");
         	$('.progress .progress-bar span').removeClass('sr-only');
             $.each(data.files, function (index, file) {
                 //alert('Selected file: ' + file.name);
