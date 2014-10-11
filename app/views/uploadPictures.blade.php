@@ -73,6 +73,10 @@ $signature = md5($policy.'&'.$form_api_secret);
 
 <script>
 $(function () {
+
+    var c=0;
+    var cc=0;
+
     $('#fileupload').fileupload({
         dataType: 'json',
         formData: {policy: '{{$policy}}',
@@ -84,13 +88,15 @@ $(function () {
                 //alert('Selected file: ' + file.name);
             var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
                 $newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
-                $newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+data.files[0].name+"'>");
+                $newImg = $("<img id='"+c+"' style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+file.name+"'>");
 
             $newA.append($newImg);
 
             $newDiv.append($newA);
  
             $( "#pic-preview-area" ).append($newDiv);
+
+            c++;
 
             });
 
@@ -100,9 +106,10 @@ $(function () {
     	},
     	add: function(e,data){
 
-
-
-			//data.context = $newImg;
+            //alert(data.files[0].name);
+            var img = $("#pic-preview-area img#"+cc);
+			data.context = img;
+            cc++;
 
 
 
