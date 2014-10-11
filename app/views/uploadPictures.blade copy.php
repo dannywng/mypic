@@ -81,30 +81,26 @@ $(function () {
         change: function (e, data) {
         	$('.progress .progress-bar span').removeClass('sr-only');
             $.each(data.files, function (index, file) {
-                //alert('Selected file: ' + file.name);
-            var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
-                $newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
-                $newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+data.files[0].name+"'>");
-
-            $newA.append($newImg);
-
-            $newDiv.append($newA);
- 
-            $( "#pic-preview-area" ).append($newDiv);
-
+                alert('Selected file: ' + file.name);
             });
-
-            //重新运行holder.js
-            Holder.run();
-
+            alert("sdf");
     	},
     	add: function(e,data){
 
+    		var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
+    			$newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
+    			$newImg = $("<img style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+data.files[0].name+"'>");
 
+    		$newA.append($newImg);
 
-			//data.context = $newImg;
+    		$newDiv.append($newA);
+ 
+			$( "#pic-preview-area" ).append($newDiv);
 
+			data.context = $newImg;
 
+            //重新运行holder.js
+            Holder.run();
 
             data.submit();
 
