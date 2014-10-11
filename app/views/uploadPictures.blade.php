@@ -105,6 +105,8 @@ $(function () {
 
             $("#pic-preview-area img").removeAttr("data-src");
 
+            Holder.run();
+
     	},
     	add: function(e,data){
 
@@ -124,9 +126,9 @@ $(function () {
         $('.progress .progress-bar span strong').text(progress+'%');
     	},
         done: function (e, data) {
-            $.each(data.files, function (index, file) {
+            //$.each(data.files, function (index, file) {
                 //$('<p/>').text(file.name).appendTo(document.body);
-            });
+            //});
             data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
             //data.context.removeAttr("data-src");
             data.context.parent().attr("href","http://mypicwebsite.b0.upaiyun.com/"+data.result.url);
