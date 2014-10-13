@@ -69,13 +69,9 @@ $signature = md5($policy.'&'.$form_api_secret);
 <script src="js/jquery.ui.widget.js"></script>
 <script src="js/jquery.iframe-transport.js"></script>
 <script src="js/jquery.fileupload.js"></script>
-<script src="js/holder.js"></script>
 
 <script>
 $(function () {
-
-    var c=0;
-    var cc=0;
 
     $('#fileupload').fileupload({
         dataType: 'json',
@@ -84,11 +80,17 @@ $(function () {
         },
         change: function (e, data) {
         	$('.progress .progress-bar span').removeClass('sr-only');
-            $.each(data.files, function (index, file) {
+            //$.each(data.files, function (index, file) {
                 //alert('Selected file: ' + file.name);
+
+            //});
+
+    	},
+        add:function(e,data) {
+
             var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
                 $newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
-                $newImg = $("<img id='"+c+"' style='width:100%;height:100%;' data-src='holder.js/155x155/auto/text:"+file.name+"'>");
+                $newImg = $("<img src='css/background-images/uploading-placeholder.png' style='width:100%;height:100%;'>");
 
             $newA.append($newImg);
 
@@ -96,38 +98,25 @@ $(function () {
  
             $( "#pic-preview-area" ).append($newDiv);
 
-            c++;
+            data.context = $newImg;
 
-            });
-
-            //重新运行holder.js
-            Holder.run();
-
-            $("#pic-preview-area img").removeAttr("data-src");
-            $("#pic-preview-area img").removeAttr("data-holder-rendered");
-
-    	},
-    	add: function(e,data){
-
-            //alert(data.files[0].name);
-            var img = $("#pic-preview-area img#"+cc);
-			data.context = img;
-            cc++;
             data.submit();
 
-    	},
+        },
         progressall: function (e, data) {
-        var progress = parseInt(data.loaded / data.total * 100, 10);
-        $('.progress .progress-bar').css(
-            'width',
-            progress + '%'
-        );
-        $('.progress .progress-bar span strong').text(progress+'%');
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('.progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+            $('.progress .progress-bar span strong').text(progress+'%');
     	},
         done: function (e, data) {
             //$.each(data.files, function (index, file) {
                 //$('<p/>').text(file.name).appendTo(document.body);
             //});
+           
+
             data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
             //data.context.removeAttr("data-src");
             data.context.parent().attr("href","http://mypicwebsite.b0.upaiyun.com/"+data.result.url);
