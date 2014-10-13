@@ -74,23 +74,6 @@ $signature = md5($policy.'&'.$form_api_secret);
 <script>
 $(function () {
 
-    Holder.addImage("holder.js/200x100","body").run();
-        Holder.addImage("holder.js/200x100","body").run();
-
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-    Holder.addImage("holder.js/200x100","body").run();
-
-
-
     var c=0;
     var cc=0;
 

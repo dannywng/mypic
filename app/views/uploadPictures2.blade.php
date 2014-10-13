@@ -90,7 +90,7 @@ $(function () {
                 //alert(encodeURIComponent(file.name));
             var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
                 $newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
-                $newImg = $("<img id='"+c+"' style='width:100%;height:100%;' data-src='http://dummyimage.com/250x250/eee/aaa&text=df+dfdf' src='css/background-images/placeholder.png'>");
+                $newImg = $("<img id='"+c+"' style='width:100%;height:100%;' data-src='http://dummyimage.com/250x250/eee/aaa&text="+file.name+"' src='css/background-images/placeholder.png'>");
 
             $newA.append($newImg);
 
