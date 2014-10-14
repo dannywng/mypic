@@ -73,6 +73,10 @@ $signature = md5($policy.'&'.$form_api_secret);
 <script>
 $(function () {
 
+    var imgCache = new Image();
+
+    imgCache.src = "css/background-images/uploading-placeholder.png";
+
     $('#fileupload').fileupload({
         dataType: 'json',
         formData: {policy: '{{$policy}}',
@@ -88,9 +92,11 @@ $(function () {
     	},
         add:function(e,data) {
 
+            var $imgSrc=imgCache.src;
+
             var $newDiv = $( "<div class='col-xs-4 col-sm-3 col-md-2'/>" ),
                 $newA = $("<a href='#'' target='_blank' class='thumbnail'/>"),
-                $newImg = $("<img src='css/background-images/uploading-placeholder.png' style='width:100%;height:100%;'>");
+                $newImg = $("<img src='"+$imgSrc+"' style='width:100%;height:100%;'>");
 
             $newA.append($newImg);
 
@@ -116,10 +122,15 @@ $(function () {
                 //$('<p/>').text(file.name).appendTo(document.body);
             //});
            
+            if(data.result.code==200){
 
-            data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
-            //data.context.removeAttr("data-src");
-            data.context.parent().attr("href","http://mypicwebsite.b0.upaiyun.com/"+data.result.url);
+
+                data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
+                //data.context.attr("src","http://mypicwebsite.b0.upaiyun.com/"+data.result.url+"!square250");
+                data.context.parent().attr("href","http://mypicwebsite.b0.upaiyun.com/"+data.result.url);
+
+            }
+            
         },
         fail:function(){
 
