@@ -68,6 +68,7 @@ body, ul, li, img {
 	*display: inline;
 	*zoom:1;
 	cursor: pointer;
+	vertical-align: bottom;
 
 }
 
